@@ -9,12 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var scoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    @IBOutlet var cardButtons: [UIButton]!
+    
+    @IBAction func cardButtonTouched(_ sender: UIButton) {
+    }
+    
+    @IBAction func dealThreeMoreCardsButtonTouched(_ sender: UIButton) {
+    }
+    
+    @IBAction func newGameButtonTouched(_ sender: UIButton) {
+    }
 }
-
