@@ -15,6 +15,8 @@
 		3D360C8A255CCA7000CEB075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D360C88255CCA7000CEB075 /* LaunchScreen.storyboard */; };
 		3D360C95255CCA7000CEB075 /* SoloSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C94255CCA7000CEB075 /* SoloSetTests.swift */; };
 		3D360CA0255CCA7000CEB075 /* SoloSetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C9F255CCA7000CEB075 /* SoloSetUITests.swift */; };
+		3D360CAF255D22FF00CEB075 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360CAE255D22FF00CEB075 /* SetGame.swift */; };
+		3D360CB1255D235700CEB075 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360CB0255D235700CEB075 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3D360C9B255CCA7000CEB075 /* SoloSetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoloSetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D360C9F255CCA7000CEB075 /* SoloSetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloSetUITests.swift; sourceTree = "<group>"; };
 		3D360CA1255CCA7000CEB075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D360CAE255D22FF00CEB075 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
+		3D360CB0255D235700CEB075 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,13 @@
 		3D360C7C255CCA6D00CEB075 /* SoloSet */ = {
 			isa = PBXGroup;
 			children = (
-				3D360C7D255CCA6D00CEB075 /* AppDelegate.swift */,
-				3D360C7F255CCA6D00CEB075 /* SceneDelegate.swift */,
+				3D360CAD255D22CF00CEB075 /* Supporting Files */,
 				3D360C81255CCA6D00CEB075 /* ViewController.swift */,
 				3D360C83255CCA6D00CEB075 /* Main.storyboard */,
 				3D360C86255CCA7000CEB075 /* Assets.xcassets */,
-				3D360C88255CCA7000CEB075 /* LaunchScreen.storyboard */,
 				3D360C8B255CCA7000CEB075 /* Info.plist */,
+				3D360CAE255D22FF00CEB075 /* SetGame.swift */,
+				3D360CB0255D235700CEB075 /* Card.swift */,
 			);
 			path = SoloSet;
 			sourceTree = "<group>";
@@ -126,6 +130,16 @@
 				3D360CA1255CCA7000CEB075 /* Info.plist */,
 			);
 			path = SoloSetUITests;
+			sourceTree = "<group>";
+		};
+		3D360CAD255D22CF00CEB075 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D360C7D255CCA6D00CEB075 /* AppDelegate.swift */,
+				3D360C7F255CCA6D00CEB075 /* SceneDelegate.swift */,
+				3D360C88255CCA7000CEB075 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D360CAF255D22FF00CEB075 /* SetGame.swift in Sources */,
 				3D360C82255CCA6D00CEB075 /* ViewController.swift in Sources */,
+				3D360CB1255D235700CEB075 /* Card.swift in Sources */,
 				3D360C7E255CCA6D00CEB075 /* AppDelegate.swift in Sources */,
 				3D360C80255CCA6D00CEB075 /* SceneDelegate.swift in Sources */,
 			);
