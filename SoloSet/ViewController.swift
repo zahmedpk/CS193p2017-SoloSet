@@ -10,24 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
-    @IBOutlet var cardButtons: [UIButton]! {
-        didSet {
-            cardButtons.shuffle()
-        }
-    }
+    @IBOutlet var cardButtons: [UIButton]!
+    var setGame: SetGame!
+    var cardForButtonTag = [Int:Card]()
     func resetUI(){
         //make all buttons invisible
         for cardButton in cardButtons {
+            cardButton.setAttributedTitle(NSAttributedString(string: ""), for: .normal)
             cardButton.setTitle("", for: .normal)
             cardButton.backgroundColor = .clear
             cardButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
-    
-    var setGame: SetGame!
-    var cardForButtonTag = [Int:Card]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        startNewGame()
+    }
+    func startNewGame() {
+        cardForButtonTag.removeAll()
+        cardButtons.shuffle()
         setGame = SetGame()
         //deal 12 cards from the deck
         for _ in 1...4 {
@@ -44,10 +45,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func dealThreeMoreCardsButtonTouched(_ sender: UIButton) {
+        if cardButtons.count > setGame.cardsAvailable {
+            setGame.dealThreeCards()
+            updateUI()
+        }
     }
     
     @IBAction func newGameButtonTouched(_ sender: UIButton) {
-        
+        startNewGame()
     }
     func show(_ card: Card, on button: UIButton){
         cardForButtonTag[button.tag] = card
@@ -99,10 +104,8 @@ class ViewController: UIViewController {
                     }   
                 }
             } else {
-                print("card is to be removed")
                 hide(cardButtons[index])
             }
         }
-        
     }
 }

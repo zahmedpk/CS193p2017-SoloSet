@@ -37,10 +37,21 @@ class SetGame {
         }
         return false
     }
+    var cardsAvailable : Int {
+        var count = 0
+        for card in dealtCards {
+            if !removedCards.contains(card){
+                count += 1
+            }
+        }
+        return count
+    }
     func dealThreeCards() {
         for _ in 1...3 {
             if let dealtCard = deck.popLast() {
                 dealtCards.append(dealtCard)
+            } else {
+                print("no more cards left in deck")
             }
         }
     }
@@ -57,7 +68,7 @@ class SetGame {
                 }
             }
         }
-//        deck.shuffle()//TODO: uncomment this after initial testing
+       // deck.shuffle()//TODO: uncomment this after initial testing
     }
     func select(card: Card){
         if selectedCards.count < 3 {
