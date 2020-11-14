@@ -48,8 +48,10 @@ class ViewController: UIViewController {
     @IBAction func dealThreeMoreCardsButtonTouched(_ sender: UIButton) {
         if setGame.selectedCardsFormASet && setGame.deck.count >= 3 {
             setGame.replaceSelectedCards()
+            print("replace cards on screen, selected cards are: ", setGame.selectedCards)
         } else if cardButtons.count > setGame.cardsAvailable {
             setGame.dealThreeCards()
+            print("add more cards to screen")
         }
         updateUI()
     }
@@ -112,5 +114,8 @@ class ViewController: UIViewController {
         let canDealMoreCards = (emptySpotsOnScreen > 2 || setGame.selectedCardsFormASet) && setGame.deck.count > 2
         dealThreeMoreCardsButton.isEnabled = canDealMoreCards
         scoreLabel.text = "Score: \(setGame.score)"
+        print("remaining deck is \(setGame.deck.count)")
+        print("number of sets found is \(setGame.removedCards.count/3)")
+        
     }
 }

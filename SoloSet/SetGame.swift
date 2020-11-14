@@ -56,7 +56,7 @@ class SetGame {
     }
     init() {
         //populate deck and shuffle
-        for shape in 0...0 {//TODO: correct this to 0...2.
+        for shape in 0...2 {//TODO: correct this to 0...2.
             //shape is temporarily made same for all cards for smaller deck for easier testing
             for shading in 0...2 {
                 for number in 0...2{
@@ -67,7 +67,7 @@ class SetGame {
                 }
             }
         }
-       // deck.shuffle()//TODO: uncomment this after initial testing
+       //deck.shuffle()//TODO: uncomment this after initial testing
     }
     func select(card: Card){
         if selectedCards.count < 3 {
@@ -106,10 +106,11 @@ class SetGame {
     func replaceSelectedCards() {
         for i in dealtCards.indices {
             if selectedCards.contains(dealtCards[i]) {
-                let newCard = deck.popLast()!
+                let newCard = deck.removeFirst()
                 removedCards.append(dealtCards[i])
                 dealtCards[i] = newCard
             }
         }
+        selectedCards.removeAll()
     }
 }
