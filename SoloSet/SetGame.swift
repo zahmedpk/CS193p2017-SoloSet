@@ -83,13 +83,7 @@ class SetGame {
             }
             if selectedCardsFormASet {
                 if deck.count >= 3 {//replace cards
-                    for i in dealtCards.indices {
-                        if selectedCards.contains(dealtCards[i]) {
-                            let newCard = deck.popLast()!
-                            removedCards.append(dealtCards[i])
-                            dealtCards[i] = newCard
-                        }
-                    }
+                    replaceSelectedCards()
                 } else {
                     //cards cant be replaced, just removing
                     for card in selectedCards {
@@ -99,6 +93,15 @@ class SetGame {
             }
             selectedCards.removeAll()
             selectedCards.append(card)
+        }
+    }
+    func replaceSelectedCards() {
+        for i in dealtCards.indices {
+            if selectedCards.contains(dealtCards[i]) {
+                let newCard = deck.popLast()!
+                removedCards.append(dealtCards[i])
+                dealtCards[i] = newCard
+            }
         }
     }
 }

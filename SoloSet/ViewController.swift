@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet var dealThreeMoreCardsButton: UIButton!
     var setGame: SetGame!
     var cardForButtonTag = [Int:Card]()
     func resetUI(){
@@ -45,10 +46,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func dealThreeMoreCardsButtonTouched(_ sender: UIButton) {
-        if cardButtons.count > setGame.cardsAvailable {
+        if setGame.selectedCardsFormASet && setGame.deck.count >= 3 {
+            setGame.replaceSelectedCards()
+        } else if cardButtons.count > setGame.cardsAvailable {
             setGame.dealThreeCards()
-            updateUI()
         }
+        updateUI()
     }
     
     @IBAction func newGameButtonTouched(_ sender: UIButton) {
@@ -107,5 +110,9 @@ class ViewController: UIViewController {
                 hide(cardButtons[index])
             }
         }
+        let emptySpotsOnScreen = cardButtons.count - setGame.cardsAvailable
+        let canDealMoreCards = (emptySpotsOnScreen > 2 || setGame.selectedCardsFormASet) && setGame.deck.count > 2
+        dealThreeMoreCardsButton.isEnabled = canDealMoreCards
+        print("remaining deck is ", setGame.deck.count)
     }
 }
