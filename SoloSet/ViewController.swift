@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet var dealThreeMoreCardsButton: UIButton!
-    var setGame: SetGame!
-    var cardForButtonTag = [Int:Card]()
+    private var setGame: SetGame!
+    private var cardForButtonTag = [Int:Card]()
     func resetUI(){
         //make all buttons invisible
         for cardButton in cardButtons {
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         if setGame.selectedCardsFormASet && setGame.deck.count >= 3 {
             setGame.replaceSelectedCards()
             print("replace cards on screen, selected cards are: ", setGame.selectedCards)
-        } else if cardButtons.count > setGame.cardsAvailable {
+        } else if cardButtons.count > setGame.cardsAvailableToPlay {
             setGame.dealThreeCards()
             print("add more cards to screen")
         }
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
                 hide(cardButtons[index])
             }
         }
-        let emptySpotsOnScreen = cardButtons.count - setGame.cardsAvailable
+        let emptySpotsOnScreen = cardButtons.count - setGame.cardsAvailableToPlay
         let canDealMoreCards = (emptySpotsOnScreen > 2 || setGame.selectedCardsFormASet) && setGame.deck.count > 2
         dealThreeMoreCardsButton.isEnabled = canDealMoreCards
         scoreLabel.text = "Score: \(setGame.score)"

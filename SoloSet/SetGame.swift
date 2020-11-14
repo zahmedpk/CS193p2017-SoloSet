@@ -10,10 +10,10 @@ import Foundation
 
 class SetGame {
     private(set) var deck = [Card]()
-    var dealtCards = [Card]()
-    var selectedCards = [Card]()
-    var removedCards = [Card]()
-    var score = 0
+    private(set) var dealtCards = [Card]()
+    private(set) var selectedCards = [Card]()
+    private(set) var removedCards = [Card]()
+    private(set) var score = 0
     var selectedCardsFormASet : Bool {
         if selectedCards.count == 3 {
             var shapesInvolved = Set<Int>()
@@ -38,7 +38,7 @@ class SetGame {
         }
         return false
     }
-    var cardsAvailable : Int {
+    var cardsAvailableToPlay : Int {
         var count = 0
         for card in dealtCards {
             if !removedCards.contains(card){
