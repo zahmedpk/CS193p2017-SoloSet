@@ -13,6 +13,7 @@ class SetGame {
     var dealtCards = [Card]()
     var selectedCards = [Card]()
     var removedCards = [Card]()
+    var score = 0
     var selectedCardsFormASet : Bool {
         if selectedCards.count == 3 {
             var shapesInvolved = Set<Int>()
@@ -50,8 +51,6 @@ class SetGame {
         for _ in 1...3 {
             if let dealtCard = deck.popLast() {
                 dealtCards.append(dealtCard)
-            } else {
-                print("no more cards left in deck")
             }
         }
     }
@@ -74,11 +73,20 @@ class SetGame {
         if selectedCards.count < 3 {
             if selectedCards.contains(card){
                 selectedCards.removeAll {$0 == card}
+                //deselection penalty
+                score -= 1
             } else {
                 selectedCards.append(card)
+                if selectedCards.count == 3 {
+                    if selectedCardsFormASet {
+                        score += 3
+                    } else {//non matching 3
+                        score -= 5
+                    }
+                }
             }
         } else {
-            if selectedCards.contains(card) {
+            if selectedCards.contains(card) && selectedCardsFormASet {
                 return
             }
             if selectedCardsFormASet {

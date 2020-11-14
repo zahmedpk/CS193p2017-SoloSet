@@ -111,6 +111,6 @@ class ViewController: UIViewController {
         let emptySpotsOnScreen = cardButtons.count - setGame.cardsAvailable
         let canDealMoreCards = (emptySpotsOnScreen > 2 || setGame.selectedCardsFormASet) && setGame.deck.count > 2
         dealThreeMoreCardsButton.isEnabled = canDealMoreCards
-        print("remaining deck is ", setGame.deck.count)
+        scoreLabel.text = "Score: \(setGame.score)"
     }
 }

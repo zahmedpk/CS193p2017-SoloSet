@@ -9,6 +9,18 @@
 import Foundation
 
 struct Card: Equatable {
+    //A single card representing one of the 81 permutations of shape, shading, number and color.
+    // each of these four features can take one of 3 possible values, i.e 0, 1, 2
+    let shape: Shape
+    let shading: Shading
+    let number: Number
+    let color: Color
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.shape == rhs.shape && lhs.shading == rhs.shading && lhs.number == rhs.number && lhs.color == rhs.color
+    }
+}
+
+extension Card {
     enum Shape: Int, CaseIterable {
         case A
         case B
@@ -29,14 +41,5 @@ struct Card: Equatable {
         case One
         case Two
         case Three
-    }
-    //A single card representing one of the 81 permutations of shape, shading, number and color.
-    // each of these four features can take one of 3 possible values, i.e 0, 1, 2
-    let shape: Shape
-    let shading: Shading
-    let number: Number
-    let color: Color
-    static func == (lhs: Card, rhs: Card) -> Bool {
-        return lhs.shape == rhs.shape && lhs.shading == rhs.shading && lhs.number == rhs.number && lhs.color == rhs.color
     }
 }
