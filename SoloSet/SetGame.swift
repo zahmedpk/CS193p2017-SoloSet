@@ -14,6 +14,10 @@ class SetGame {
     private(set) var selectedCards = [Card]()
     private(set) var removedCards = [Card]()
     private(set) var score = 0
+    let pointsPerSet = 3
+    let pointsPenaltyPerMismatch = -5
+    var lastSetFormedAtTime: Date?
+    
     var selectedCardsFormASet : Bool {
         if selectedCards.count == 3 {
             var shapesInvolved = Set<Int>()
@@ -79,9 +83,18 @@ class SetGame {
                 selectedCards.append(card)
                 if selectedCards.count == 3 {
                     if selectedCardsFormASet {
-                        score += 3
+                        score += pointsPerSet
+                        if let previousSetFormedAt = lastSetFormedAtTime {
+                            let deltaInSeconds = previousSetFormedAt.distance(to: Date())
+                            let tenthOfSeconds = deltaInSeconds/10
+                            let speed = 1/tenthOfSeconds
+                            let speedPoints = Int(speed * Double(pointsPerSet))
+                            score += speedPoints
+                            print("speed points awarded are \(speedPoints)")
+                        }
+                        lastSetFormedAtTime = Date()
                     } else {//non matching 3
-                        score -= 5
+                        score += pointsPenaltyPerMismatch
                     }
                 }
             }
