@@ -43,3 +43,12 @@ extension Card {
         case Three
     }
 }
+
+extension Card: Hashable {
+    func hash(into hasher: inout Hasher){
+        hasher.combine(shape)
+        hasher.combine(shading)
+        hasher.combine(number)
+        hasher.combine(color)
+    }
+}

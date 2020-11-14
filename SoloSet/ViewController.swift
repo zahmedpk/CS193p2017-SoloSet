@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         let shape = [0: "▲", 1: "●", 2: "■"][card.shape.rawValue]!
         let numberedShape = String(repeating: shape, count: number)
         var attributes = [NSAttributedString.Key: Any]()
-        let color = [0: UIColor.cyan, 1: UIColor.magenta, 2: UIColor.orange][card.color.rawValue]!
+        let color: UIColor = [0: #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1), 1: UIColor.magenta, 2: UIColor.orange][card.color.rawValue]!
         switch card.shading {
         case .A://outline
             attributes[.foregroundColor] = color.withAlphaComponent(1.0)
@@ -117,5 +117,25 @@ class ViewController: UIViewController {
         print("remaining deck is \(setGame.deck.count)")
         print("number of sets found is \(setGame.removedCards.count/3)")
         
+    }
+    @IBAction func cheatButtonTouched(_ sender: UIButton) {
+        var cardsCurrentlyShown = [Card]()
+        var buttonsForCurrentlyShownCards = [UIButton]()
+        for cardButton in cardButtons {
+            if cardButton.backgroundColor != UIColor.clear {
+                cardsCurrentlyShown.append(cardForButtonTag[cardButton.tag]!)
+                buttonsForCurrentlyShownCards.append(cardButton)
+            }
+        }
+        if let setMakingCards = setGame.findSet(in: cardsCurrentlyShown){
+            print("found a set")
+            for (index, card) in cardsCurrentlyShown.enumerated() {
+                if setMakingCards.contains(card){
+                    buttonsForCurrentlyShownCards[index].backgroundColor = UIColor.systemYellow.withAlphaComponent(0.2)
+                }
+            }
+        } else {
+            print("could not find a set in shown cards")
+        }
     }
 }

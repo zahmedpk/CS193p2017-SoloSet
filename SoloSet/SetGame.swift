@@ -19,12 +19,16 @@ class SetGame {
     var lastSetFormedAtTime: Date?
     
     var selectedCardsFormASet : Bool {
-        if selectedCards.count == 3 {
+        return isASet(in: selectedCards)
+    }
+    
+    func isASet(in cards: [Card]) -> Bool {
+        if cards.count == 3 {
             var shapesInvolved = Set<Int>()
             var numbersInvolved = Set<Int>()
             var colorsInvolved = Set<Int>()
             var shadingInvolved = Set<Int>()
-            for card in selectedCards {
+            for card in cards {
                 shapesInvolved.insert(card.shape.rawValue)
                 numbersInvolved.insert(card.number.rawValue)
                 colorsInvolved.insert(card.color.rawValue)
@@ -42,6 +46,7 @@ class SetGame {
         }
         return false
     }
+    
     var cardsAvailableToPlay : Int {
         var count = 0
         for card in dealtCards {
@@ -71,7 +76,7 @@ class SetGame {
                 }
             }
         }
-       //deck.shuffle()//TODO: uncomment this after initial testing
+       deck.shuffle()
     }
     func select(card: Card){
         if selectedCards.count < 3 {
@@ -125,5 +130,20 @@ class SetGame {
             }
         }
         selectedCards.removeAll()
+    }
+    func findSet(in cards: [Card]) -> [Card]? {
+        for card1 in cards {
+            for card2 in cards {
+                for card3 in cards {
+                    let choiceOfThree = [card1, card2, card3]
+                    if Set(choiceOfThree).count == 3 {
+                        if isASet(in: choiceOfThree){
+                            return choiceOfThree
+                        }
+                    }
+                }
+            }
+        }
+        return nil
     }
 }
