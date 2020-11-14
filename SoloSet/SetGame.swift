@@ -20,10 +20,10 @@ class SetGame {
             var colorsInvolved = Set<Int>()
             var shadingInvolved = Set<Int>()
             for card in selectedCards {
-                shapesInvolved.insert(card.shape)
-                numbersInvolved.insert(card.number)
-                colorsInvolved.insert(card.color)
-                shadingInvolved.insert(card.shading)
+                shapesInvolved.insert(card.shape.rawValue)
+                numbersInvolved.insert(card.number.rawValue)
+                colorsInvolved.insert(card.color.rawValue)
+                shadingInvolved.insert(card.shading.rawValue)
             }
             if shapesInvolved.count == 3 || shapesInvolved.count == 1 {
                 if numbersInvolved.count == 3 || numbersInvolved.count == 1 {
@@ -62,7 +62,7 @@ class SetGame {
             for shading in 0...2 {
                 for number in 0...2{
                     for color in 0...2 {
-                        let newCard = Card(shape: shape, shading: shading, number: number, color: color)
+                        let newCard = Card(shape: Card.Shape(rawValue: shape)!, shading: Card.Shading(rawValue: shading)!, number: Card.Number(rawValue: number)!, color: Card.Color(rawValue: color)!)
                         deck.append(newCard)
                     }
                 }

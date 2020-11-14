@@ -60,21 +60,19 @@ class ViewController: UIViewController {
     func show(_ card: Card, on button: UIButton){
         cardForButtonTag[button.tag] = card
         button.backgroundColor = .systemGray5
-        let number = card.number+1
-        let shape = [0: "▲", 1: "●", 2: "■"][card.shape]!
+        let number = card.number.rawValue+1
+        let shape = [0: "▲", 1: "●", 2: "■"][card.shape.rawValue]!
         let numberedShape = String(repeating: shape, count: number)
         var attributes = [NSAttributedString.Key: Any]()
-        let color = [0: UIColor.cyan, 1: UIColor.magenta, 2: UIColor.orange][card.color]!
+        let color = [0: UIColor.cyan, 1: UIColor.magenta, 2: UIColor.orange][card.color.rawValue]!
         switch card.shading {
-        case 0://outline
+        case .A://outline
             attributes[.foregroundColor] = color.withAlphaComponent(1.0)
             attributes[.strokeWidth] = 5
-        case 1://striped
+        case .B://striped
             attributes[.foregroundColor] = color.withAlphaComponent(0.25)
-        case 2://filled
+        case .C://filled
             attributes[.foregroundColor] = color.withAlphaComponent(1.0)
-        default:
-            preconditionFailure("found unexpected value of card.shading :\(card.shading)")
         }
         let attributedString = NSAttributedString(string: numberedShape , attributes: attributes)
         button.setAttributedTitle(attributedString, for: .normal)
