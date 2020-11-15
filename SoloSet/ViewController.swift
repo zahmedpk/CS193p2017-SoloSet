@@ -62,11 +62,11 @@ class ViewController: UIViewController {
     func show(_ card: Card, on button: UIButton){
         cardForButtonTag[button.tag] = card
         button.backgroundColor = .systemGray5
-        let number = card.number.rawValue+1
-        let shape = [0: "▲", 1: "●", 2: "■"][card.shape.rawValue]!
+        let number = [Card.Number.One: 1, .Two: 2, .Three: 3][card.number]!
+        let shape = [Card.Shape.A: "▲", .B: "●", .C: "■"][card.shape]!
         let numberedShape = String(repeating: shape, count: number)
         var attributes = [NSAttributedString.Key: Any]()
-        let color: UIColor = [0: #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1), 1: UIColor.magenta, 2: UIColor.orange][card.color.rawValue]!
+        let color: UIColor = [Card.Color.A: #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1), .B: UIColor.magenta, .C: UIColor.orange][card.color]!
         switch card.shading {
         case .A://outline
             attributes[.foregroundColor] = color.withAlphaComponent(1.0)

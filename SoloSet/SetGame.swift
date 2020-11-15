@@ -24,15 +24,15 @@ class SetGame {
     
     func isASet(in cards: [Card]) -> Bool {
         if cards.count == 3 {
-            var shapesInvolved = Set<Int>()
-            var numbersInvolved = Set<Int>()
-            var colorsInvolved = Set<Int>()
-            var shadingInvolved = Set<Int>()
+            var shapesInvolved = Set<Card.Shape>()
+            var numbersInvolved = Set<Card.Number>()
+            var colorsInvolved = Set<Card.Color>()
+            var shadingInvolved = Set<Card.Shading>()
             for card in cards {
-                shapesInvolved.insert(card.shape.rawValue)
-                numbersInvolved.insert(card.number.rawValue)
-                colorsInvolved.insert(card.color.rawValue)
-                shadingInvolved.insert(card.shading.rawValue)
+                shapesInvolved.insert(card.shape)
+                numbersInvolved.insert(card.number)
+                colorsInvolved.insert(card.color)
+                shadingInvolved.insert(card.shading)
             }
             if shapesInvolved.count == 3 || shapesInvolved.count == 1 {
                 if numbersInvolved.count == 3 || numbersInvolved.count == 1 {
@@ -65,12 +65,11 @@ class SetGame {
     }
     init() {
         //populate deck and shuffle
-        for shape in 0...2 {//TODO: correct this to 0...2.
-            //shape is temporarily made same for all cards for smaller deck for easier testing
-            for shading in 0...2 {
-                for number in 0...2{
-                    for color in 0...2 {
-                        let newCard = Card(shape: Card.Shape(rawValue: shape)!, shading: Card.Shading(rawValue: shading)!, number: Card.Number(rawValue: number)!, color: Card.Color(rawValue: color)!)
+        for shape in Card.Shape.allCases {
+            for shading in Card.Shading.allCases {
+                for number in Card.Number.allCases {
+                    for color in Card.Color.allCases {
+                        let newCard = Card(shape: shape, shading: shading, number: number, color: color)
                         deck.append(newCard)
                     }
                 }
