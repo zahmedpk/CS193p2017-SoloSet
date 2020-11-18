@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     func show(_ card: Card, on button: UIButton){
         cardForButtonTag[button.tag] = card
-        button.backgroundColor = .systemGray5
+        button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         let number = [Card.Number.One: 1, .Two: 2, .Three: 3][card.number]!
         let shape = [Card.Shape.A: "▲", .B: "●", .C: "■"][card.shape]!
         let numberedShape = String(repeating: shape, count: number)

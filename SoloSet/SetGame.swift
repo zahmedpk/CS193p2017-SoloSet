@@ -89,7 +89,7 @@ class SetGame {
                     if selectedCardsFormASet {
                         score += pointsPerSet
                         if let previousSetFormedAt = lastSetFormedAtTime {
-                            let deltaInSeconds = previousSetFormedAt.distance(to: Date())
+                            let deltaInSeconds = Date().timeIntervalSince(previousSetFormedAt)
                             let tenthOfSeconds = deltaInSeconds/10
                             let speed = 1/tenthOfSeconds
                             let speedPoints = Int(speed * Double(pointsPerSet))
