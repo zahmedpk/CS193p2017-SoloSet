@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1561BC25662A2B00774CAD /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1561BB25662A2B00774CAD /* Grid.swift */; };
 		3D360C7E255CCA6D00CEB075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C7D255CCA6D00CEB075 /* AppDelegate.swift */; };
 		3D360C80255CCA6D00CEB075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C7F255CCA6D00CEB075 /* SceneDelegate.swift */; };
 		3D360C82255CCA6D00CEB075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C81255CCA6D00CEB075 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D1561BB25662A2B00774CAD /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		3D360C7A255CCA6D00CEB075 /* SoloSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoloSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D360C7D255CCA6D00CEB075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D360C7F255CCA6D00CEB075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				3D360CAD255D22CF00CEB075 /* Supporting Files */,
 				3D360C81255CCA6D00CEB075 /* ViewController.swift */,
+				3D1561BB25662A2B00774CAD /* Grid.swift */,
 				3D360C83255CCA6D00CEB075 /* Main.storyboard */,
 				3D360C86255CCA7000CEB075 /* Assets.xcassets */,
 				3D360C8B255CCA7000CEB075 /* Info.plist */,
@@ -278,6 +281,7 @@
 				3D360CB1255D235700CEB075 /* Card.swift in Sources */,
 				3D360C7E255CCA6D00CEB075 /* AppDelegate.swift in Sources */,
 				3D360C80255CCA6D00CEB075 /* SceneDelegate.swift in Sources */,
+				3D1561BC25662A2B00774CAD /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
