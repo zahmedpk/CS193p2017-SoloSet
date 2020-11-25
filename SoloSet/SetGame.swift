@@ -155,4 +155,7 @@ class SetGame {
         }
         return nil
     }
+    func shuffleDealtCards() {
+        dealtCards.shuffle()
+    }
 }

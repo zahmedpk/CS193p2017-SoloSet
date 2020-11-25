@@ -35,6 +35,10 @@ class GraphicalSoloSetViewController: UIViewController {
         swipeGestureRecognizer.direction = .down
         self.view.addGestureRecognizer(swipeGestureRecognizer)
         self.view.isUserInteractionEnabled = true
+        
+        let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(handleRotationGestureRecognizer(recognizer:)))
+        self.view.addGestureRecognizer(rotationGestureRecognizer)
+        
     }
     @objc func handleTap(recognizer: UITapGestureRecognizer){
         let cardView = recognizer.view as! CardView
@@ -45,6 +49,12 @@ class GraphicalSoloSetViewController: UIViewController {
     @objc func handleSwipeGesture(recognizer: UISwipeGestureRecognizer){
         game.dealThreeCards()
         showDealtCards()
+    }
+    @objc func handleRotationGestureRecognizer(recognizer: UIRotationGestureRecognizer){
+        if recognizer.state == .recognized {
+            game.shuffleDealtCards()
+            showDealtCards()
+        }
     }
     func showDealtCards(){
         scoreLabel.text = "Score: \(game.score)"
