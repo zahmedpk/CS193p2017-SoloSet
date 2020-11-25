@@ -98,6 +98,14 @@ class GraphicalSoloSetViewController: UIViewController {
     }
     @IBOutlet var scoreLabel: UILabel!
     @IBAction func cheatButtonTapped(_ sender: UIButton) {
+        if let foundSet = game.findSet(in: game.dealtCards){
+            let foundIds = foundSet.map {$0.id}
+            for cardView in cardsGridView.subviews {
+                if foundIds.contains(cardView.tag){
+                    cardView.layer.borderColor = UIColor.orange.cgColor
+                    cardView.layer.borderWidth = 3.0
+                }
+            }
+        }
     }
-    
 }
