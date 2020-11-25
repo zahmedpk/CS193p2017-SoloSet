@@ -90,4 +90,10 @@ class GraphicalSoloSetViewController: UIViewController {
         }
     }
     @IBOutlet var deal3MoreCardsButton: UIButton!
+    @IBAction func newGameButtonTapped(_ sender: UIButton) {
+        game = SetGame()
+        deal12Cards()
+        showDealtCards()
+    }
+    
 }

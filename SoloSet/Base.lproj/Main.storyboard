@@ -33,6 +33,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-et-4zx">
                                         <rect key="frame" x="0.0" y="38" width="75" height="30"/>
                                         <state key="normal" title="New Game"/>
+                                        <connections>
+                                            <action selector="newGameButtonTapped:" destination="iCk-iD-a63" eventType="touchUpInside" id="sF6-Ex-g75"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" alignment="center" axis="horizontal"/>
