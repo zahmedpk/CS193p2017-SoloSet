@@ -21,7 +21,14 @@ class SetGame {
     var selectedCardsFormASet : Bool {
         return isASet(in: selectedCards)
     }
-    
+    var cardIdMaker: () -> Int = {
+        var cardId = 0
+        func inner() -> Int {
+            cardId += 1
+            return cardId
+        }
+        return inner
+    }()
     func isASet(in cards: [Card]) -> Bool {
         if cards.count == 3 {
             var shapesInvolved = Set<Card.Shape>()
@@ -69,7 +76,7 @@ class SetGame {
             for shading in Card.Shading.allCases {
                 for number in Card.Number.allCases {
                     for color in Card.Color.allCases {
-                        let newCard = Card(shape: shape, shading: shading, number: number, color: color)
+                        let newCard = Card(shape: shape, shading: shading, number: number, color: color, id: cardIdMaker())
                         deck.append(newCard)
                     }
                 }

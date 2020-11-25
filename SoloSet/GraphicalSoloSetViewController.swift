@@ -9,33 +9,67 @@
 import UIKit
 
 class GraphicalSoloSetViewController: UIViewController {
-    @IBOutlet var gridView: UIView! {
-        didSet {
-            gridView.backgroundColor = .red
-        }
+    @IBOutlet var cardsGridView: CardsGridView!
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        cardsGridView.setNeedsLayout()
     }
+    var game = SetGame()
+    let colorMapping: [Card.Color: UIColor] = [
+        .A: .green,
+        .B: .red,
+        .C: .purple
+    ]
+    let shapeMapping: [Card.Shape: ShapeView.Kind] = [
+        .A: .Diamond,
+        .B: .Squiggle,
+        .C: .Stadium
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function, "grid view frame is \(gridView.frame) and bounds is \(gridView.bounds)")
+        deal12Cards()
+        showDealtCards()
     }
-    
-    func updateGameUI(){
-        gridView.subviews.forEach { $0.removeFromSuperview() }
-        var cellFrameCalculator = Grid(layout: .aspectRatio(5.0/8.0), frame: self.gridView.bounds)
-        cellFrameCalculator.cellCount = 81
-        for i in 0..<cellFrameCalculator.cellCount {
-            let blueBox = UIView(frame: cellFrameCalculator[i]!.insetBy(dx: 10, dy: 10))
-            blueBox.backgroundColor = .blue
-            gridView.addSubview(blueBox)
+    override func viewDidAppear(_ animated: Bool) {
+        print("grid has \(cardsGridView.subviews.count) cards")
+    }
+    @objc func foo(recognizer: UITapGestureRecognizer){
+        let cardView = recognizer.view as! CardView
+        print("cardView with tag \(cardView.tag) tapped")
+    }
+    func showDealtCards(){
+        var cardViews = [CardView]()
+        for card in game.dealtCards {
+            var shapeViews = [ShapeView]()
+            for _ in 1...card.number.rawValue {
+                let shapeView = ShapeView()
+                shapeView.color = colorMapping[card.color]!
+                shapeView.isFilled = card.shading == Card.Shading.C
+                shapeView.isStriped = card.shading == Card.Shading.B
+                shapeView.shape = shapeMapping[card.shape]!
+                shapeViews.append(shapeView)
+            }
+            let cardView = CardView()
+            cardView.shapeViews = shapeViews
+            cardView.tag = card.id
+            cardView.viewController = self
+            cardViews.append(cardView)
+        }
+        cardsGridView.cards = cardViews
+    }
+    func deal12Cards(){
+        for _ in 1...4 {
+            game.dealThreeCards()
         }
     }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        updateGameUI()
+    @IBAction func deal3MoreCardsButtonTapped(_ sender: UIButton) {
+        if game.deck.count > 0 {
+            game.dealThreeCards()
+            showDealtCards()
+        }
+        if game.deck.count == 0 {
+            deal3MoreCardsButton.isEnabled = false
+        }
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        updateGameUI()
-    }
+    @IBOutlet var deal3MoreCardsButton: UIButton!
 }

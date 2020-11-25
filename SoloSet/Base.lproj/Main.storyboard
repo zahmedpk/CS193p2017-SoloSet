@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juj-BN-WHE">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juj-BN-WHE" customClass="CardsGridView" customModule="SoloSet" customModuleProvider="target">
                                 <rect key="frame" x="20" y="64" width="374" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -26,6 +26,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOa-5q-CPo">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                         <state key="normal" title="Deal 3 More Cards"/>
+                                        <connections>
+                                            <action selector="deal3MoreCardsButtonTapped:" destination="iCk-iD-a63" eventType="touchUpInside" id="BF5-DM-Go4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-et-4zx">
                                         <rect key="frame" x="0.0" y="38" width="75" height="30"/>
@@ -45,9 +48,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFs-hQ-x6a">
                                         <rect key="frame" x="0.0" y="38" width="41" height="30"/>
-                                        <state key="normal" title="Cheat">
-                                            <color key="titleColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
+                                        <state key="normal" title="Cheat"/>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" alignment="center" axis="horizontal"/>
@@ -69,12 +70,13 @@
                         <viewLayoutGuide key="safeArea" id="PCf-Zk-CWb"/>
                     </view>
                     <connections>
-                        <outlet property="gridView" destination="juj-BN-WHE" id="O6G-mj-jZl"/>
+                        <outlet property="cardsGridView" destination="juj-BN-WHE" id="O6G-mj-jZl"/>
+                        <outlet property="deal3MoreCardsButton" destination="BOa-5q-CPo" id="K9U-Fw-nsn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkI-4F-43n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511.59420289855075" y="-159.375"/>
+            <point key="canvasLocation" x="72" y="-840"/>
         </scene>
     </scenes>
 </document>

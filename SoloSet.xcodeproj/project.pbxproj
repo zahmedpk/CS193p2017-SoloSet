@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D1561BC25662A2B00774CAD /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1561BB25662A2B00774CAD /* Grid.swift */; };
 		3D1561BE2566368D00774CAD /* GraphicalSoloSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1561BD2566368D00774CAD /* GraphicalSoloSetViewController.swift */; };
+		3D307E8A2567C6DC00D53877 /* CardsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D307E892567C6DC00D53877 /* CardsGridView.swift */; };
 		3D360C7E255CCA6D00CEB075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C7D255CCA6D00CEB075 /* AppDelegate.swift */; };
 		3D360C80255CCA6D00CEB075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C7F255CCA6D00CEB075 /* SceneDelegate.swift */; };
 		3D360C85255CCA6D00CEB075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D360C83255CCA6D00CEB075 /* Main.storyboard */; };
@@ -18,6 +19,10 @@
 		3D360CA0255CCA7000CEB075 /* SoloSetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360C9F255CCA7000CEB075 /* SoloSetUITests.swift */; };
 		3D360CAF255D22FF00CEB075 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360CAE255D22FF00CEB075 /* SetGame.swift */; };
 		3D360CB1255D235700CEB075 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D360CB0255D235700CEB075 /* Card.swift */; };
+		3D41F797256CF2F6008EAB41 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41F796256CF2F6008EAB41 /* CGFloatExtensions.swift */; };
+		3D41F799256CF37B008EAB41 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41F798256CF37B008EAB41 /* CardView.swift */; };
+		3D41F79B256CF7D9008EAB41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41F79A256CF7D9008EAB41 /* Constants.swift */; };
+		3DA8456C256A4335000F74F6 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8456B256A4335000F74F6 /* ShapeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,7 @@
 /* Begin PBXFileReference section */
 		3D1561BB25662A2B00774CAD /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		3D1561BD2566368D00774CAD /* GraphicalSoloSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicalSoloSetViewController.swift; sourceTree = "<group>"; };
+		3D307E892567C6DC00D53877 /* CardsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsGridView.swift; sourceTree = "<group>"; };
 		3D360C7A255CCA6D00CEB075 /* SoloSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoloSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D360C7D255CCA6D00CEB075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D360C7F255CCA6D00CEB075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,10 @@
 		3D360CA1255CCA7000CEB075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D360CAE255D22FF00CEB075 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		3D360CB0255D235700CEB075 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3D41F796256CF2F6008EAB41 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
+		3D41F798256CF37B008EAB41 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3D41F79A256CF7D9008EAB41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3DA8456B256A4335000F74F6 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +117,17 @@
 			children = (
 				3D360CAD255D22CF00CEB075 /* Supporting Files */,
 				3D1561BD2566368D00774CAD /* GraphicalSoloSetViewController.swift */,
+				3D41F798256CF37B008EAB41 /* CardView.swift */,
+				3DA8456B256A4335000F74F6 /* ShapeView.swift */,
+				3D307E892567C6DC00D53877 /* CardsGridView.swift */,
 				3D1561BB25662A2B00774CAD /* Grid.swift */,
 				3D360C83255CCA6D00CEB075 /* Main.storyboard */,
 				3D360C86255CCA7000CEB075 /* Assets.xcassets */,
 				3D360C8B255CCA7000CEB075 /* Info.plist */,
 				3D360CAE255D22FF00CEB075 /* SetGame.swift */,
 				3D360CB0255D235700CEB075 /* Card.swift */,
+				3D41F796256CF2F6008EAB41 /* CGFloatExtensions.swift */,
+				3D41F79A256CF7D9008EAB41 /* Constants.swift */,
 			);
 			path = SoloSet;
 			sourceTree = "<group>";
@@ -277,10 +292,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1561BE2566368D00774CAD /* GraphicalSoloSetViewController.swift in Sources */,
+				3D41F79B256CF7D9008EAB41 /* Constants.swift in Sources */,
 				3D360CAF255D22FF00CEB075 /* SetGame.swift in Sources */,
 				3D360CB1255D235700CEB075 /* Card.swift in Sources */,
+				3D41F797256CF2F6008EAB41 /* CGFloatExtensions.swift in Sources */,
+				3D307E8A2567C6DC00D53877 /* CardsGridView.swift in Sources */,
+				3DA8456C256A4335000F74F6 /* ShapeView.swift in Sources */,
 				3D360C7E255CCA6D00CEB075 /* AppDelegate.swift in Sources */,
 				3D360C80255CCA6D00CEB075 /* SceneDelegate.swift in Sources */,
+				3D41F799256CF37B008EAB41 /* CardView.swift in Sources */,
 				3D1561BC25662A2B00774CAD /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,7 @@ struct Card: Equatable {
     let shading: Shading
     let number: Number
     let color: Color
+    let id: Int
     static func == (lhs: Card, rhs: Card) -> Bool {
         return lhs.shape == rhs.shape && lhs.shading == rhs.shading && lhs.number == rhs.number && lhs.color == rhs.color
     }
@@ -38,9 +39,9 @@ extension Card {
     }
 
     enum Number: Int, CaseIterable {
-        case One
-        case Two
-        case Three
+        case One=1
+        case Two=2
+        case Three=3
     }
 }
 
