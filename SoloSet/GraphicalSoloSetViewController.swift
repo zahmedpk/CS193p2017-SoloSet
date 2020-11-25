@@ -112,6 +112,7 @@ class GraphicalSoloSetViewController: UIViewController {
         game = SetGame()
         deal12Cards()
         showDealtCards()
+        deal3MoreCardsButton.isEnabled = true
     }
     @IBOutlet var scoreLabel: UILabel!
     @IBAction func cheatButtonTapped(_ sender: UIButton) {
