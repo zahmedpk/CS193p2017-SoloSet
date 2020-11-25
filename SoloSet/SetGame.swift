@@ -120,6 +120,9 @@ class SetGame {
                     //cards cant be replaced, just removing
                     for card in selectedCards {
                         removedCards.append(card)
+                        if let i = dealtCards.firstIndex(of: card){
+                            dealtCards.remove(at: i)
+                        }
                     }
                 }
             }
