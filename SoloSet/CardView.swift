@@ -50,6 +50,6 @@ class CardView: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     override func willMove(toSuperview newSuperview: UIView?) {
-        self.addGestureRecognizer(UITapGestureRecognizer(target: viewController, action: #selector(viewController.foo(recognizer:))))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: viewController, action: #selector(viewController.handleTap(recognizer:))))
     }
 }

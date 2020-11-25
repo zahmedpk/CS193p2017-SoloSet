@@ -31,12 +31,19 @@ class GraphicalSoloSetViewController: UIViewController {
         showDealtCards()
     }
     override func viewDidAppear(_ animated: Bool) {
-        print("grid has \(cardsGridView.subviews.count) cards")
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(recognizer:)))
+        swipeGestureRecognizer.direction = .down
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
+        self.view.isUserInteractionEnabled = true
     }
-    @objc func foo(recognizer: UITapGestureRecognizer){
+    @objc func handleTap(recognizer: UITapGestureRecognizer){
         let cardView = recognizer.view as! CardView
         let card = game.dealtCards.first(where: {$0.id == cardView.tag})
         game.select(card: card!)
+        showDealtCards()
+    }
+    @objc func handleSwipeGesture(recognizer: UISwipeGestureRecognizer){
+        game.dealThreeCards()
         showDealtCards()
     }
     func showDealtCards(){
