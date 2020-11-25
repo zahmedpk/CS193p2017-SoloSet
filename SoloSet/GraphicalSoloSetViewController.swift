@@ -35,7 +35,9 @@ class GraphicalSoloSetViewController: UIViewController {
     }
     @objc func foo(recognizer: UITapGestureRecognizer){
         let cardView = recognizer.view as! CardView
-        print("cardView with tag \(cardView.tag) tapped")
+        let card = game.dealtCards.first(where: {$0.id == cardView.tag})
+        game.select(card: card!)
+        showDealtCards()
     }
     func showDealtCards(){
         var cardViews = [CardView]()
@@ -53,6 +55,18 @@ class GraphicalSoloSetViewController: UIViewController {
             cardView.shapeViews = shapeViews
             cardView.tag = card.id
             cardView.viewController = self
+            cardView.isSelected = game.selectedCards.contains(card)
+            if cardView.isSelected {
+                if game.selectedCards.count < 3 {
+                    cardView.borderColor = UIColor.blue.cgColor
+                } else if game.isASet(in: game.selectedCards){
+                    cardView.borderColor = UIColor.green.cgColor
+                } else {
+                    cardView.borderColor = UIColor.red.cgColor
+                }
+            } else {
+                cardView.borderColor = UIColor.gray.cgColor
+            }
             cardViews.append(cardView)
         }
         cardsGridView.cards = cardViews

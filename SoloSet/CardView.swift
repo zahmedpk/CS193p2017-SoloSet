@@ -15,9 +15,14 @@ class CardView: UIButton {
         }
     }
     var viewController: GraphicalSoloSetViewController!
+    var borderColor: CGColor!
     override func layoutSubviews() {
-        self.layer.borderColor = UIColor.gray.cgColor
-        self.layer.borderWidth = 1.0
+        if isSelected {
+            self.layer.borderWidth = 2.0
+        } else {
+            self.layer.borderWidth = 1.0
+        }
+        self.layer.borderColor = borderColor
         self.layer.cornerRadius = 2
         if self.bounds.width > 100 {
             self.layer.cornerRadius = 5
