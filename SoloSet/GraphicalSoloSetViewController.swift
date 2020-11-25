@@ -78,7 +78,11 @@ class GraphicalSoloSetViewController: UIViewController {
     }
     @IBAction func deal3MoreCardsButtonTapped(_ sender: UIButton) {
         if game.deck.count > 0 {
-            game.dealThreeCards()
+            if game.selectedCardsFormASet {
+                game.replaceSelectedCards()
+            } else {
+                game.dealThreeCards()
+            }
             showDealtCards()
         }
         if game.deck.count == 0 {
