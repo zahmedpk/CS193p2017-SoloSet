@@ -78,7 +78,6 @@ class ShapeView: UIView {
         path.addLine(to: CGPoint(rect.origin.x+rect.width-radius, rect.origin.y))
         path.addArc(withCenter: CGPoint(rect.origin.x+rect.width-radius, rect.origin.y+radius), radius: radius, startAngle: 3*CGFloat.pi/2.0, endAngle: CGFloat.pi/2.0, clockwise: true)
         path.close()
-        //8549passcode changed for ipad on 24 Nov 2020
         return path
     }
     func pathForSquiggle(in rect: CGRect) -> UIBezierPath {
