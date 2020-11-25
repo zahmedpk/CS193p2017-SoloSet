@@ -52,6 +52,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFs-hQ-x6a">
                                         <rect key="frame" x="0.0" y="38" width="41" height="30"/>
                                         <state key="normal" title="Cheat"/>
+                                        <connections>
+                                            <action selector="cheatButtonTapped:" destination="iCk-iD-a63" eventType="touchUpInside" id="uq0-3X-qnK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" alignment="center" axis="horizontal"/>
@@ -75,6 +78,7 @@
                     <connections>
                         <outlet property="cardsGridView" destination="juj-BN-WHE" id="O6G-mj-jZl"/>
                         <outlet property="deal3MoreCardsButton" destination="BOa-5q-CPo" id="K9U-Fw-nsn"/>
+                        <outlet property="scoreLabel" destination="aYA-dO-sMz" id="UCr-KC-nnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkI-4F-43n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

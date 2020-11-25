@@ -40,6 +40,7 @@ class GraphicalSoloSetViewController: UIViewController {
         showDealtCards()
     }
     func showDealtCards(){
+        scoreLabel.text = "Score: \(game.score)"
         var cardViews = [CardView]()
         for card in game.dealtCards {
             var shapeViews = [ShapeView]()
@@ -94,6 +95,9 @@ class GraphicalSoloSetViewController: UIViewController {
         game = SetGame()
         deal12Cards()
         showDealtCards()
+    }
+    @IBOutlet var scoreLabel: UILabel!
+    @IBAction func cheatButtonTapped(_ sender: UIButton) {
     }
     
 }
