@@ -16,74 +16,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYi-Ub-edM">
+                                <rect key="frame" x="332.5" y="747" width="61.5" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aNV-2k-wZm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="0 Sets"/>
+                                <state key="disabled">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juj-BN-WHE" customClass="CardsGridView" customModule="SoloSet" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="374" height="690"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="20" y="64" width="374" height="675"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.40000000000000002" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Khf-xS-sYY">
-                                <rect key="frame" x="20" y="774" width="128" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ou-J7-MBI">
+                                <rect key="frame" x="20" y="747" width="61.5" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7ou-J7-MBI" secondAttribute="height" multiplier="8:5.2" id="vkn-Yz-0EM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Deal">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deal3MoreCardsButtonTapped:" destination="iCk-iD-a63" eventType="touchUpInside" id="UTL-BZ-dwB"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kqy-81-lbv">
+                                <rect key="frame" x="20" y="806" width="374" height="36"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOa-5q-CPo">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
-                                        <state key="normal" title="Deal 3 More Cards"/>
-                                        <connections>
-                                            <action selector="deal3MoreCardsButtonTapped:" destination="iCk-iD-a63" eventType="touchUpInside" id="BF5-DM-Go4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-et-4zx">
-                                        <rect key="frame" x="0.0" y="38" width="75" height="30"/>
-                                        <state key="normal" title="New Game"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-et-4zx">
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="New Game">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="newGameButtonTapped:" destination="iCk-iD-a63" eventType="touchUpInside" id="sF6-Ex-g75"/>
                                         </connections>
                                     </button>
-                                </subviews>
-                                <variation key="heightClass=compact" alignment="center" axis="horizontal"/>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kqy-81-lbv">
-                                <rect key="frame" x="336.5" y="774" width="57.5" height="68"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYA-dO-sMz">
-                                        <rect key="frame" x="0.0" y="0.0" width="57.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYA-dO-sMz">
+                                        <rect key="frame" x="127.5" y="6" width="119" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFs-hQ-x6a">
-                                        <rect key="frame" x="0.0" y="38" width="41" height="30"/>
-                                        <state key="normal" title="Cheat"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFs-hQ-x6a">
+                                        <rect key="frame" x="254.5" y="0.0" width="119.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Cheat">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cheatButtonTapped:" destination="iCk-iD-a63" eventType="touchUpInside" id="uq0-3X-qnK"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <variation key="heightClass=compact" alignment="center" axis="horizontal"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.40000000000000002" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PCf-Zk-CWb" firstAttribute="bottom" secondItem="Khf-xS-sYY" secondAttribute="bottom" constant="20" id="5oG-uh-4RC"/>
+                            <constraint firstItem="cYi-Ub-edM" firstAttribute="width" secondItem="7ou-J7-MBI" secondAttribute="width" id="2iY-z2-0ys"/>
+                            <constraint firstItem="Kqy-81-lbv" firstAttribute="top" secondItem="cYi-Ub-edM" secondAttribute="bottom" constant="19" id="Bvc-Gv-80m"/>
+                            <constraint firstItem="7ou-J7-MBI" firstAttribute="leading" secondItem="juj-BN-WHE" secondAttribute="leading" id="CIe-Yz-OMl"/>
+                            <constraint firstItem="cYi-Ub-edM" firstAttribute="height" secondItem="7ou-J7-MBI" secondAttribute="height" id="FUZ-Zd-9MO"/>
                             <constraint firstItem="juj-BN-WHE" firstAttribute="leading" secondItem="PCf-Zk-CWb" secondAttribute="leading" constant="20" id="I9g-E8-qju"/>
-                            <constraint firstItem="Kqy-81-lbv" firstAttribute="top" secondItem="Khf-xS-sYY" secondAttribute="top" id="Tw7-Rz-Cnm"/>
+                            <constraint firstItem="PCf-Zk-CWb" firstAttribute="bottom" secondItem="j6z-et-4zx" secondAttribute="bottom" constant="20" id="TuN-yk-VKT"/>
+                            <constraint firstItem="cYi-Ub-edM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7ou-J7-MBI" secondAttribute="trailing" constant="8" symbolic="YES" id="UwC-dV-dS2"/>
+                            <constraint firstItem="cYi-Ub-edM" firstAttribute="top" secondItem="juj-BN-WHE" secondAttribute="bottom" constant="8" id="VHI-yW-yOu"/>
+                            <constraint firstItem="cYi-Ub-edM" firstAttribute="trailing" secondItem="juj-BN-WHE" secondAttribute="trailing" id="ZwJ-fM-azi"/>
                             <constraint firstItem="juj-BN-WHE" firstAttribute="top" secondItem="PCf-Zk-CWb" secondAttribute="top" constant="20" id="bAW-br-963"/>
-                            <constraint firstItem="Kqy-81-lbv" firstAttribute="bottom" secondItem="Khf-xS-sYY" secondAttribute="bottom" id="bJ9-Wd-WC8"/>
                             <constraint firstItem="Kqy-81-lbv" firstAttribute="trailing" secondItem="juj-BN-WHE" secondAttribute="trailing" id="heX-ag-w9C"/>
+                            <constraint firstItem="Kqy-81-lbv" firstAttribute="leading" secondItem="7ou-J7-MBI" secondAttribute="leading" id="ipk-8U-mkf"/>
                             <constraint firstItem="PCf-Zk-CWb" firstAttribute="trailing" secondItem="juj-BN-WHE" secondAttribute="trailing" constant="20" id="kGY-zv-pTo"/>
-                            <constraint firstItem="Khf-xS-sYY" firstAttribute="leading" secondItem="juj-BN-WHE" secondAttribute="leading" id="moK-71-EFJ"/>
-                            <constraint firstItem="aYA-dO-sMz" firstAttribute="height" secondItem="BOa-5q-CPo" secondAttribute="height" id="vQM-s3-JDH"/>
-                            <constraint firstItem="Khf-xS-sYY" firstAttribute="top" secondItem="juj-BN-WHE" secondAttribute="bottom" constant="20" id="vYp-dW-PuE"/>
+                            <constraint firstItem="cYi-Ub-edM" firstAttribute="top" secondItem="7ou-J7-MBI" secondAttribute="top" id="pcQ-uc-ny1"/>
+                            <constraint firstItem="cYi-Ub-edM" firstAttribute="baseline" secondItem="7ou-J7-MBI" secondAttribute="firstBaseline" id="yde-h9-gnW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PCf-Zk-CWb"/>
                     </view>
                     <connections>
                         <outlet property="cardsGridView" destination="juj-BN-WHE" id="O6G-mj-jZl"/>
-                        <outlet property="deal3MoreCardsButton" destination="BOa-5q-CPo" id="K9U-Fw-nsn"/>
+                        <outlet property="deal3MoreCardsButton" destination="7ou-J7-MBI" id="p51-qB-21g"/>
+                        <outlet property="discardPileButton" destination="cYi-Ub-edM" id="IpZ-fd-s0E"/>
                         <outlet property="scoreLabel" destination="aYA-dO-sMz" id="UCr-KC-nnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkI-4F-43n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="-840"/>
+            <point key="canvasLocation" x="71.014492753623188" y="-840.40178571428567"/>
         </scene>
     </scenes>
 </document>

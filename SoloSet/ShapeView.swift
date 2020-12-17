@@ -5,6 +5,7 @@
 //  Created by Zubair Ahmed on 22/11/2020.
 //  Copyright © 2020 Zubair Ahmed. All rights reserved.
 //
+// ShapeView is used by CardView to show a Squiggle, Diamond or Stadium.
 
 import UIKit
 

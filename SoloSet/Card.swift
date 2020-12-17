@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Card: Equatable {
+struct Card: Equatable, CustomStringConvertible {
     //A single card representing one of the 81 permutations of shape, shading, number and color.
     // each of these four features can take one of 3 possible values, i.e 0, 1, 2
     let shape: Shape
@@ -18,6 +18,9 @@ struct Card: Equatable {
     let id: Int
     static func == (lhs: Card, rhs: Card) -> Bool {
         return lhs.shape == rhs.shape && lhs.shading == rhs.shading && lhs.number == rhs.number && lhs.color == rhs.color
+    }
+    var description: String {
+        return String(id)
     }
 }
 

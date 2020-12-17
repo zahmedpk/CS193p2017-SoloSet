@@ -5,6 +5,9 @@
 //  Created by Zubair Ahmed on 12/11/2020.
 //  Copyright © 2020 Zubair Ahmed. All rights reserved.
 //
+// Provides the logic for SET cards game.
+// It comprises of 81 cards when initialized.
+// Cards are matched as they are selected.
 
 import Foundation
 
@@ -82,7 +85,7 @@ class SetGame {
                 }
             }
         }
-       deck.shuffle()
+        deck.shuffle()
     }
     func select(card: Card){
         if selectedCards.count < 3 {
@@ -101,7 +104,6 @@ class SetGame {
                             let speed = 1/tenthOfSeconds
                             let speedPoints = Int(speed * Double(pointsPerSet))
                             score += speedPoints
-                            print("speed points awarded are \(speedPoints)")
                         }
                         lastSetFormedAtTime = Date()
                     } else {//non matching 3
@@ -131,12 +133,21 @@ class SetGame {
         }
     }
     func replaceSelectedCards() {
+        if deck.count > 0 {
         for i in dealtCards.indices {
             if selectedCards.contains(dealtCards[i]) {
                 let newCard = deck.removeFirst()
                 removedCards.append(dealtCards[i])
                 dealtCards[i] = newCard
             }
+        }
+        } else {
+            for i in dealtCards.indices {
+                if selectedCards.contains(dealtCards[i]) {
+                    removedCards.append(dealtCards[i])
+                }
+            }
+            dealtCards = dealtCards.filter {!selectedCards.contains($0)}
         }
         selectedCards.removeAll()
     }
